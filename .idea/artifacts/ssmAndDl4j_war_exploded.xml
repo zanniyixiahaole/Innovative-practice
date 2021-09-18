@@ -1,0 +1,247 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" build-on-make="true" name="ssmAndDl4j:war exploded">
+    <output-path>$PROJECT_DIR$/target/ssmAndDl4j-0.0.1-SNAPSHOT</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <exploded>true</exploded>
+        <module>ssmAndDl4j</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="ssmAndDl4j" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: com.alibaba:fastjson:1.2.11" />
+          <element id="library" level="project" name="Maven: com.lowagie:itext:2.1.7" />
+          <element id="library" level="project" name="Maven: bouncycastle:bcmail-jdk14:138" />
+          <element id="library" level="project" name="Maven: bouncycastle:bcprov-jdk14:138" />
+          <element id="library" level="project" name="Maven: org.bouncycastle:bctsp-jdk14:1.38" />
+          <element id="library" level="project" name="Maven: org.bouncycastle:bcprov-jdk14:1.38" />
+          <element id="library" level="project" name="Maven: org.bouncycastle:bcmail-jdk14:1.38" />
+          <element id="library" level="project" name="Maven: net.sf.json-lib:json-lib:jdk15:2.4" />
+          <element id="library" level="project" name="Maven: commons-beanutils:commons-beanutils:1.8.0" />
+          <element id="library" level="project" name="Maven: commons-lang:commons-lang:2.5" />
+          <element id="library" level="project" name="Maven: commons-logging:commons-logging:1.1.1" />
+          <element id="library" level="project" name="Maven: net.sf.ezmorph:ezmorph:1.0.6" />
+          <element id="library" level="project" name="Maven: commons-io:commons-io:2.4" />
+          <element id="library" level="project" name="Maven: commons-fileupload:commons-fileupload:1.3.1" />
+          <element id="library" level="project" name="Maven: org.apache.pdfbox:fontbox:2.0.1" />
+          <element id="library" level="project" name="Maven: org.apache.pdfbox:pdfbox:2.0.1" />
+          <element id="library" level="project" name="Maven: junit:junit:4.12" />
+          <element id="library" level="project" name="Maven: org.hamcrest:hamcrest-core:1.3" />
+          <element id="library" level="project" name="Maven: ch.qos.logback:logback-classic:1.1.1" />
+          <element id="library" level="project" name="Maven: ch.qos.logback:logback-core:1.1.1" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.6" />
+          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:8.0.22" />
+          <element id="library" level="project" name="Maven: com.google.protobuf:protobuf-java:3.11.4" />
+          <element id="library" level="project" name="Maven: c3p0:c3p0:0.9.1.2" />
+          <element id="library" level="project" name="Maven: org.mybatis:mybatis:3.3.0" />
+          <element id="library" level="project" name="Maven: org.mybatis:mybatis-spring:1.2.3" />
+          <element id="library" level="project" name="Maven: taglibs:standard:1.1.2" />
+          <element id="library" level="project" name="Maven: jstl:jstl:1.2" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.5.4" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.5.0" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.5.4" />
+          <element id="library" level="project" name="Maven: javax.servlet:javax.servlet-api:3.1.0" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-core:4.1.7.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-beans:4.1.7.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-context:4.1.7.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-aop:4.1.7.RELEASE" />
+          <element id="library" level="project" name="Maven: aopalliance:aopalliance:1.0" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-expression:4.1.7.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:4.1.7.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-tx:4.1.7.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-web:4.1.7.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:4.1.7.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-test:4.1.7.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-oxm:4.1.7.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-aspects:4.1.7.RELEASE" />
+          <element id="library" level="project" name="Maven: org.aspectj:aspectjweaver:1.8.6" />
+          <element id="library" level="project" name="Maven: redis.clients:jedis:2.7.3" />
+          <element id="library" level="project" name="Maven: org.apache.commons:commons-pool2:2.3" />
+          <element id="library" level="project" name="Maven: com.dyuproject.protostuff:protostuff-core:1.0.8" />
+          <element id="library" level="project" name="Maven: com.dyuproject.protostuff:protostuff-api:1.0.8" />
+          <element id="library" level="project" name="Maven: com.dyuproject.protostuff:protostuff-runtime:1.0.8" />
+          <element id="library" level="project" name="Maven: com.dyuproject.protostuff:protostuff-collectionschema:1.0.8" />
+          <element id="library" level="project" name="Maven: commons-collections:commons-collections:3.2" />
+          <element id="library" level="project" name="Maven: org.deeplearning4j:deeplearning4j-core:1.0.0-beta2" />
+          <element id="library" level="project" name="Maven: org.deeplearning4j:deeplearning4j-tsne:1.0.0-beta2" />
+          <element id="library" level="project" name="Maven: org.deeplearning4j:nearestneighbor-core:1.0.0-beta2" />
+          <element id="library" level="project" name="Maven: org.deeplearning4j:deeplearning4j-datasets:1.0.0-beta2" />
+          <element id="library" level="project" name="Maven: org.deeplearning4j:deeplearning4j-common:1.0.0-beta2" />
+          <element id="library" level="project" name="Maven: org.deeplearning4j:deeplearning4j-datavec-iterators:1.0.0-beta2" />
+          <element id="library" level="project" name="Maven: org.deeplearning4j:deeplearning4j-modelimport:1.0.0-beta2" />
+          <element id="library" level="project" name="Maven: org.bytedeco:javacpp:1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:hdf5-platform:1.10.2-1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:hdf5:1.10.2-1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:hdf5:linux-x86:1.10.2-1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:hdf5:linux-x86_64:1.10.2-1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:hdf5:linux-ppc64le:1.10.2-1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:hdf5:macosx-x86_64:1.10.2-1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:hdf5:windows-x86:1.10.2-1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:hdf5:windows-x86_64:1.10.2-1.4.2" />
+          <element id="library" level="project" name="Maven: org.deeplearning4j:deeplearning4j-nn:1.0.0-beta2" />
+          <element id="library" level="project" name="Maven: org.deeplearning4j:deeplearning4j-utility-iterators:1.0.0-beta2" />
+          <element id="library" level="project" name="Maven: org.deeplearning4j:deeplearning4j-util:1.0.0-beta2" />
+          <element id="library" level="project" name="Maven: org.nd4j:nd4j-native-api:1.0.0-beta2" />
+          <element id="library" level="project" name="Maven: org.nd4j:nd4j-common:1.0.0-beta2" />
+          <element id="library" level="project" name="Maven: com.github.oshi:oshi-core:3.4.2" />
+          <element id="library" level="project" name="Maven: net.java.dev.jna:jna-platform:4.3.0" />
+          <element id="library" level="project" name="Maven: net.java.dev.jna:jna:4.3.0" />
+          <element id="library" level="project" name="Maven: org.threeten:threetenbp:1.3.3" />
+          <element id="library" level="project" name="Maven: it.unimi.dsi:fastutil:6.5.7" />
+          <element id="library" level="project" name="Maven: org.apache.commons:commons-math3:3.5" />
+          <element id="library" level="project" name="Maven: org.apache.commons:commons-compress:1.16.1" />
+          <element id="library" level="project" name="Maven: org.objenesis:objenesis:2.6" />
+          <element id="library" level="project" name="Maven: org.nd4j:nd4j-api:1.0.0-beta2" />
+          <element id="library" level="project" name="Maven: com.vlkan:flatbuffers:1.2.0-3f79e055" />
+          <element id="library" level="project" name="Maven: com.github.os72:protobuf-java-shaded-351:0.9" />
+          <element id="library" level="project" name="Maven: com.github.os72:protobuf-java-util-shaded-351:0.9" />
+          <element id="library" level="project" name="Maven: com.google.code.gson:gson:2.7" />
+          <element id="library" level="project" name="Maven: uk.com.robust-it:cloning:1.9.3" />
+          <element id="library" level="project" name="Maven: org.nd4j:nd4j-buffer:1.0.0-beta2" />
+          <element id="library" level="project" name="Maven: org.nd4j:nd4j-context:1.0.0-beta2" />
+          <element id="library" level="project" name="Maven: net.ericaro:neoitertools:1.0.0" />
+          <element id="library" level="project" name="Maven: org.apache.commons:commons-lang3:3.6" />
+          <element id="library" level="project" name="Maven: org.nd4j:jackson:1.0.0-beta2" />
+          <element id="library" level="project" name="Maven: org.yaml:snakeyaml:1.12" />
+          <element id="library" level="project" name="Maven: org.codehaus.woodstox:stax2-api:3.1.4" />
+          <element id="library" level="project" name="Maven: joda-time:joda-time:2.2" />
+          <element id="library" level="project" name="Maven: org.datavec:datavec-api:1.0.0-beta2" />
+          <element id="library" level="project" name="Maven: org.jetbrains:annotations:13.0" />
+          <element id="library" level="project" name="Maven: commons-codec:commons-codec:1.10" />
+          <element id="library" level="project" name="Maven: org.freemarker:freemarker:2.3.23" />
+          <element id="library" level="project" name="Maven: com.clearspring.analytics:stream:2.7.0" />
+          <element id="library" level="project" name="Maven: net.sf.opencsv:opencsv:2.3" />
+          <element id="library" level="project" name="Maven: com.tdunning:t-digest:3.2" />
+          <element id="library" level="project" name="Maven: org.datavec:datavec-data-image:1.0.0-beta2" />
+          <element id="library" level="project" name="Maven: com.github.jai-imageio:jai-imageio-core:1.3.0" />
+          <element id="library" level="project" name="Maven: com.twelvemonkeys.imageio:imageio-jpeg:3.1.1" />
+          <element id="library" level="project" name="Maven: com.twelvemonkeys.imageio:imageio-core:3.1.1" />
+          <element id="library" level="project" name="Maven: com.twelvemonkeys.imageio:imageio-metadata:3.1.1" />
+          <element id="library" level="project" name="Maven: com.twelvemonkeys.common:common-lang:3.1.1" />
+          <element id="library" level="project" name="Maven: com.twelvemonkeys.common:common-io:3.1.1" />
+          <element id="library" level="project" name="Maven: com.twelvemonkeys.common:common-image:3.1.1" />
+          <element id="library" level="project" name="Maven: com.twelvemonkeys.imageio:imageio-tiff:3.1.1" />
+          <element id="library" level="project" name="Maven: com.twelvemonkeys.imageio:imageio-psd:3.1.1" />
+          <element id="library" level="project" name="Maven: com.twelvemonkeys.imageio:imageio-bmp:3.1.1" />
+          <element id="library" level="project" name="Maven: org.bytedeco:javacv:1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:opencv:3.4.2-1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:ffmpeg:4.0.1-1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:flycapture:2.11.3.121-1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:libdc1394:2.2.5-1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:libfreenect:0.5.3-1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:libfreenect2:0.2.0-1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:librealsense:1.12.1-1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:videoinput:0.200-1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:artoolkitplus:2.3.1-1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:flandmark:1.07-1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:leptonica:1.76.0-1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:tesseract:4.0.0-beta.3-1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:opencv-platform:3.4.2-1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:opencv:android-arm:3.4.2-1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:opencv:android-arm64:3.4.2-1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:opencv:android-x86:3.4.2-1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:opencv:android-x86_64:3.4.2-1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:opencv:ios-arm64:3.4.2-1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:opencv:ios-x86_64:3.4.2-1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:opencv:linux-x86:3.4.2-1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:opencv:linux-x86_64:3.4.2-1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:opencv:linux-armhf:3.4.2-1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:opencv:linux-ppc64le:3.4.2-1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:opencv:macosx-x86_64:3.4.2-1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:opencv:windows-x86:3.4.2-1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:opencv:windows-x86_64:3.4.2-1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:leptonica-platform:1.76.0-1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:leptonica:android-arm:1.76.0-1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:leptonica:android-arm64:1.76.0-1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:leptonica:android-x86:1.76.0-1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:leptonica:android-x86_64:1.76.0-1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:leptonica:linux-x86:1.76.0-1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:leptonica:linux-x86_64:1.76.0-1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:leptonica:linux-armhf:1.76.0-1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:leptonica:linux-ppc64le:1.76.0-1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:leptonica:macosx-x86_64:1.76.0-1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:leptonica:windows-x86:1.76.0-1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:leptonica:windows-x86_64:1.76.0-1.4.2" />
+          <element id="library" level="project" name="Maven: org.deeplearning4j:deeplearning4j-ui-components:1.0.0-beta2" />
+          <element id="library" level="project" name="Maven: org.nd4j:nd4j-jackson:1.0.0-beta2" />
+          <element id="library" level="project" name="Maven: org.nd4j:nd4j-base64:1.0.0-beta2" />
+          <element id="library" level="project" name="Maven: commons-net:commons-net:3.1" />
+          <element id="library" level="project" name="Maven: org.nd4j:nd4j-native-platform:1.0.0-beta2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:openblas-platform:0.3.0-1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:openblas:0.3.0-1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:openblas:android-arm:0.3.0-1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:openblas:android-arm64:0.3.0-1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:openblas:android-x86:0.3.0-1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:openblas:android-x86_64:0.3.0-1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:openblas:ios-arm64:0.3.0-1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:openblas:ios-x86_64:0.3.0-1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:openblas:linux-x86:0.3.0-1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:openblas:linux-x86_64:0.3.0-1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:openblas:linux-armhf:0.3.0-1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:openblas:linux-ppc64le:0.3.0-1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:openblas:macosx-x86_64:0.3.0-1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:openblas:windows-x86:0.3.0-1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:openblas:windows-x86_64:0.3.0-1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:mkl-platform:2018.3-1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:mkl:2018.3-1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:mkl:linux-x86:2018.3-1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:mkl:linux-x86_64:2018.3-1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:mkl:macosx-x86_64:2018.3-1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:mkl:windows-x86:2018.3-1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:mkl:windows-x86_64:2018.3-1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:mkl-dnn-platform:0.15-1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:mkl-dnn:0.15-1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:mkl-dnn:linux-x86_64:0.15-1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:mkl-dnn:macosx-x86_64:0.15-1.4.2" />
+          <element id="library" level="project" name="Maven: org.bytedeco.javacpp-presets:mkl-dnn:windows-x86_64:0.15-1.4.2" />
+          <element id="library" level="project" name="Maven: org.nd4j:nd4j-native:1.0.0-beta2" />
+          <element id="library" level="project" name="Maven: org.nd4j:nd4j-native:android-arm:1.0.0-beta2" />
+          <element id="library" level="project" name="Maven: org.nd4j:nd4j-native:android-arm64:1.0.0-beta2" />
+          <element id="library" level="project" name="Maven: org.nd4j:nd4j-native:android-x86:1.0.0-beta2" />
+          <element id="library" level="project" name="Maven: org.nd4j:nd4j-native:android-x86_64:1.0.0-beta2" />
+          <element id="library" level="project" name="Maven: org.nd4j:nd4j-native:ios-arm64:1.0.0-beta2" />
+          <element id="library" level="project" name="Maven: org.nd4j:nd4j-native:ios-x86_64:1.0.0-beta2" />
+          <element id="library" level="project" name="Maven: org.nd4j:nd4j-native:linux-x86_64:1.0.0-beta2" />
+          <element id="library" level="project" name="Maven: org.nd4j:nd4j-native:macosx-x86_64:1.0.0-beta2" />
+          <element id="library" level="project" name="Maven: org.nd4j:nd4j-native:windows-x86_64:1.0.0-beta2" />
+          <element id="library" level="project" name="Maven: org.nd4j:nd4j-native:linux-ppc64le:1.0.0-beta2" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-log4j12:1.7.10" />
+          <element id="library" level="project" name="Maven: log4j:log4j:1.2.17" />
+          <element id="library" level="project" name="Maven: org.jpmml:jpmml-sklearn:1.2.12" />
+          <element id="library" level="project" name="Maven: com.beust:jcommander:1.48" />
+          <element id="library" level="project" name="Maven: org.jpmml:jpmml-converter:1.2.2" />
+          <element id="library" level="project" name="Maven: com.google.guava:guava:19.0" />
+          <element id="library" level="project" name="Maven: org.jpmml:pmml-model-metro:1.3.5" />
+          <element id="library" level="project" name="Maven: org.jpmml:pmml-model:1.3.5" />
+          <element id="library" level="project" name="Maven: org.jpmml:pmml-agent:1.3.5" />
+          <element id="library" level="project" name="Maven: org.jpmml:pmml-schema:1.3.5" />
+          <element id="library" level="project" name="Maven: org.glassfish.jaxb:jaxb-runtime:2.2.11" />
+          <element id="library" level="project" name="Maven: org.glassfish.jaxb:jaxb-core:2.2.11" />
+          <element id="library" level="project" name="Maven: com.sun.istack:istack-commons-runtime:2.21" />
+          <element id="library" level="project" name="Maven: org.jpmml:jpmml-lightgbm:1.0.6" />
+          <element id="library" level="project" name="Maven: org.jpmml:jpmml-xgboost:1.1.6" />
+          <element id="library" level="project" name="Maven: net.razorvine:pyrolite:4.19" />
+          <element id="library" level="project" name="Maven: net.razorvine:serpent:1.18" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-jdk14:1.7.25" />
+          <element id="library" level="project" name="Maven: org.tensorflow:tensorflow:1.12.0" />
+          <element id="library" level="project" name="Maven: org.tensorflow:libtensorflow:1.12.0" />
+          <element id="library" level="project" name="Maven: org.tensorflow:libtensorflow_jni:1.12.0" />
+          <element id="library" level="project" name="Maven: org.json:json:20160810" />
+          <element id="library" level="project" name="Maven: com.github.pagehelper:pagehelper:5.1.11" />
+          <element id="library" level="project" name="Maven: com.github.jsqlparser:jsqlparser:2.0" />
+          <element id="library" level="project" name="Maven: jfree:jfreechart:1.0.13" />
+          <element id="library" level="project" name="Maven: jfree:jcommon:1.0.16" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/target/ssmAndDl4j-0.0.1-SNAPSHOT/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="ssmAndDl4j/web/Web" />
+    </root>
+  </artifact>
+</component>

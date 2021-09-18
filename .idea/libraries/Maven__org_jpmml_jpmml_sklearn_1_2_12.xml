@@ -1,0 +1,16 @@
+<component name="libraryTable">
+	<library name="Maven: org.jpmml:jpmml-sklearn:1.2.12">
+		<CLASSES>
+			<root
+				url="jar://$USER_HOME$/.m2/repository/org/jpmml/jpmml-sklearn/1.2.12/jpmml-sklearn-1.2.12.jar!/" />
+		</CLASSES>
+		<JAVADOC>
+			<root
+				url="jar://$USER_HOME$/.m2/repository/org/jpmml/jpmml-sklearn/1.2.12/jpmml-sklearn-1.2.12-javadoc.jar!/" />
+		</JAVADOC>
+		<SOURCES>
+			<root
+				url="jar://$USER_HOME$/.m2/repository/org/jpmml/jpmml-sklearn/1.2.12/jpmml-sklearn-1.2.12-sources.jar!/" />
+		</SOURCES>
+	</library>
+</component>

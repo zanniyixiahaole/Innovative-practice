@@ -1,0 +1,17 @@
+<component name="libraryTable">
+	<library
+		name="Maven: com.typesafe.play:play-netty-server_2.11:2.4.8">
+		<CLASSES>
+			<root
+				url="jar://$USER_HOME$/.m2/repository/com/typesafe/play/play-netty-server_2.11/2.4.8/play-netty-server_2.11-2.4.8.jar!/" />
+		</CLASSES>
+		<JAVADOC>
+			<root
+				url="jar://$USER_HOME$/.m2/repository/com/typesafe/play/play-netty-server_2.11/2.4.8/play-netty-server_2.11-2.4.8-javadoc.jar!/" />
+		</JAVADOC>
+		<SOURCES>
+			<root
+				url="jar://$USER_HOME$/.m2/repository/com/typesafe/play/play-netty-server_2.11/2.4.8/play-netty-server_2.11-2.4.8-sources.jar!/" />
+		</SOURCES>
+	</library>
+</component>

@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+	<artifact type="war" build-on-make="true"
+		name="ssmAndDl4j:war">
+		<output-path>$PROJECT_DIR$/target</output-path>
+		<properties id="maven-jee-properties">
+			<options>
+				<module>ssmAndDl4j</module>
+				<packaging>war</packaging>
+			</options>
+		</properties>
+		<root id="archive" name="ssmAndDl4j-0.0.1-SNAPSHOT.war">
+			<element id="artifact"
+				artifact-name="ssmAndDl4j:war exploded" />
+		</root>
+	</artifact>
+</component>

@@ -1,0 +1,16 @@
+<component name="libraryTable">
+	<library name="Maven: net.razorvine:pyrolite:4.19">
+		<CLASSES>
+			<root
+				url="jar://$USER_HOME$/.m2/repository/net/razorvine/pyrolite/4.19/pyrolite-4.19.jar!/" />
+		</CLASSES>
+		<JAVADOC>
+			<root
+				url="jar://$USER_HOME$/.m2/repository/net/razorvine/pyrolite/4.19/pyrolite-4.19-javadoc.jar!/" />
+		</JAVADOC>
+		<SOURCES>
+			<root
+				url="jar://$USER_HOME$/.m2/repository/net/razorvine/pyrolite/4.19/pyrolite-4.19-sources.jar!/" />
+		</SOURCES>
+	</library>
+</component>
