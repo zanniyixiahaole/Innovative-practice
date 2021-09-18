@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.web.dao.resourceDao">
+	<!-- 目的：为dao接口方法提供sql语句配置 -->
+
+	<!-- 注册用 -->
+	<select id="getResources" resultType="Resource">
+		select * from resource
+		where resourceId > 0
+	</select>
+
+	<select id="getResource" resultType="Resource">
+		select * from resource where
+		resourceId = #{resourceId}
+	</select>
+	<select id="getResourcesBykw" resultType="Resource">
+		select * from resource
+		where resourceName like #{keyword} and resourceId > 0
+	</select>
+
+	<insert id="addResource" parameterType="Resource">
+		insert into
+		resource(userId,resourceName,resourceDescription,resourceUrl,resourceCredit)
+		values(#{userId},#{resourceName},#{resourceDescription},#{resourceUrl},#{resourceCredit})
+	</insert>
+
+	<select id="getResourceCredit" resultType="Double">
+		select resourceCredit
+		from resource where resourceId = #{resourceId}
+	</select>
+
+	<select id="getUserId" resultType="Long">
+		select userId from resource
+		where resourceId = #{resourceId}
+	</select>
+</mapper>

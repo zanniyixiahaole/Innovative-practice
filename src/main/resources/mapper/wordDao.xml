@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.web.dao.wordDao">
+	<!-- <resultMap id="BaseResultMap" type="com.web.entity.word" > <result 
+		column="word_id" property="wordId" jdbcType="INT" /> <result column="word" 
+		property="word" jdbcType="VARCHAR" /> </resultMap> -->
+	<!-- 目的：为dao接口方法提供sql语句配置 -->
+	<!-- 注册用 -->
+	<select id="selectword_id" parameterType="java.lang.String"
+		resultType="word">
+		SELECT
+		w.word_id,
+		w.word
+		FROM
+		word w
+		WHERE
+		w.word = #{word}
+	</select>
+
+	<select id="selectByWordId" resultType="word">
+		SELECT
+		*
+		FROM
+		word
+		WHERE
+		word = #{word}
+	</select>
+
+</mapper>

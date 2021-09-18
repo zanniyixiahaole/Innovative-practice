@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.web.dao.bookDao">
+	<!-- 目的：为dao接口方法提供sql语句配置 -->
+	<resultMap id="BaseResultMap" type="com.web.entity.book">
+		<result column="book_id" property="bookid" jdbcType="BIGINT" />
+		<result column="book_name" property="bookname"
+			jdbcType="VARCHAR" />
+		<result column="book_page" property="bookpage"
+			jdbcType="INTEGER" />
+		<result column="book_url" property="bookurl" jdbcType="VARCHAR" />
+		<result column="userID" property="userID" jdbcType="BIGINT" />
+		<result column="flag" property="flag" jdbcType="INTEGER" />
+		<result column="book_date_time" property="bookdatetime"
+			jdbcType="DATE" />
+		<result column="book_money" property="bookmoney"
+			jdbcType="BIGINT" />
+		<result column="book_belonging" property="bookbelonging"
+			jdbcType="BIGINT" />
+		<result column="money_flag" property="moneyflag"
+			jdbcType="INTEGER" />
+	</resultMap>
+
+	<!-- book,bookRecord,bookWord多表查询结果集 (这种方法好像不太行) <resultMap id="wordSourcesResultMap" 
+		type="com.web.entity.book"> <id column="book_id" property="bookid" jdbcType="BIGINT"/> 
+		<result column="book_name" property="bookname" jdbcType="VARCHAR" /> <result 
+		column="book_page" property="bookpage" jdbcType="INTEGER" /> <collection 
+		property="bookRecords" javaType="java.util.List" ofType="com.web.entity.bookRecord"> 
+		<id column="book_record" property="bookrecord" jdbcType="BIGINT"/> <result 
+		column="rec_page" property="recpage" jdbcType="INTEGER" /> <result column="rec_book_date_time" 
+		property="recbookdatetime" jdbcType="DATE" /> <collection property="bookWords" 
+		javaType="java.util.List" ofType="com.web.entity.bookWord"> <id column="book_word_id" 
+		property="bookWordId" jdbcType="BIGINT"/> <result column="word_url" property="wordUrl" 
+		jdbcType="VARCHAR"/> </collection> </collection> </resultMap> -->
+	<sql id="Base_Column_List">
+		book_id, book_name, book_page, book_url, userID, flag,
+		book_date_time,book_money,book_belonging,money_flag
+	</sql>
+	<!-- 注册用 -->
+	<select id="select" parameterType="com.web.entity.book"
+		resultMap="BaseResultMap">
+		SELECT
+		<include refid="Base_Column_List" />
+		from book
+		WHERE
+		userID = #{UserID}
+	</select>
+
+	<select id="selectById" parameterType="com.web.entity.book"
+		resultMap="BaseResultMap">
+		SELECT
+		<include refid="Base_Column_List" />
+		from book
+		WHERE
+		book_id = #{BookId}
+	</select>
+
+	<select id="selectByUserIDAndbookname"
+		parameterType="com.web.entity.book" resultMap="BaseResultMap">
+		SELECT
+		<include refid="Base_Column_List" />
+		from book
+		WHERE
+		userID = #{0} and book_name=#{1}
+	</select>
+
+	<insert id="saveBook" parameterType="com.web.entity.book"
+		useGeneratedKeys="true" keyProperty="bookid">
+		INSERT INTO book (book_name ,
+		book_page,book_url,userID,flag,book_date_time,book_money,book_belonging,money_flag)
+		values(#{bookname},#{bookpage},#{bookurl},#{userID},#{flag},#{bookdatetime},#{bookmoney},#{bookbelonging},#{moneyflag})
+	</insert>
+	<update id="UpdataBook" parameterType="com.web.entity.book">
+		update book
+		set book_name= #{bookname},
+		book_page= #{bookpage},
+		book_url= #{bookurl},
+		userID= #{userID},
+		flag= #{flag},
+		book_date_time= #{bookdatetime},
+		book_money= #{bookmoney},
+		book_belonging= #{bookbelonging},
+		money_flag=#{moneyflag}
+		where book_id = #{bookid,jdbcType=BIGINT}
+
+	</update>
+	<select id="selectByurl" parameterType="com.web.entity.book"
+		resultMap="BaseResultMap">
+		SELECT
+		*
+		from book
+		WHERE
+		book_url = #{url}
+	</select>
+	<select id="selectByBookBelonging"
+		parameterType="com.web.entity.book" resultMap="BaseResultMap">
+		SELECT
+		<include refid="Base_Column_List" />
+		from book
+		WHERE
+		book_belonging = #{bookbelonging}
+	</select>
+
+	<!--根据userId和wordId查找文字来源 （这个方法好像不太行） <select id="selectByUserIdAndWordId" 
+		resultMap="wordSourcesResultMap"> SELECT b.book_id,b.book_name,b.book_page,br.book_record,br.rec_page,br.rec_book_date_time,bw.book_word_id,bw.word_url 
+		FROM book b,book_record br,book_word bw WHERE b.book_id=br.book_id and br.book_record=bw.record 
+		and b.userID=#{userId} and bw.word_id=#{wordId} </select> -->
+	<!--用户个人中心：根据userId和wordId查找文字来源 -->
+	<select id="selectByUserIdAndWordId"
+		resultType="com.web.entity.WordSourceInfo">
+		SELECT
+		b.userID,b.book_name,b.book_url,b.book_page,br.rec_page,br.rec_book_date_time,bw.word_url
+		FROM
+		book b,book_record br,book_word bw
+		WHERE
+		b.book_id=br.book_id and br.book_record=bw.record and b.userID=#{userId} and
+		bw.word_id=#{wordId}
+	</select>
+	<!--管理平台：根据wordId查找文字来源 -->
+	<select id="selectByWordId"
+		resultType="com.web.entity.WordSourceInfo">
+		SELECT
+		b.userID,b.book_name,b.book_url,b.book_page,br.rec_page,br.rec_book_date_time,bw.word_url
+		FROM
+		book b,book_record br,book_word bw
+		WHERE
+		b.book_id=br.book_id and br.book_record=bw.record and bw.word_id=#{wordId}
+	</select>
+
+	<!--根据bookID查询书籍中已识别的文字个数 -->
+	<select id="getRecognizedWordsNum"
+		resultType="java.lang.Integer">
+		SELECT
+		count(*)
+		FROM
+		book_word
+		WHERE
+		record in(
+		SELECT
+		book_record
+		FROM
+		book_record
+		WHERE
+		book_id=#{bookId}
+		)
+	</select>
+	<!-- 查询所有book信息 -->
+	<select id="selectAll" resultMap="BaseResultMap">
+		SELECT
+		<include refid="Base_Column_List" />
+		from book
+	</select>
+	<select id="selectBymoneyflag"
+		parameterType="com.web.entity.book" resultMap="BaseResultMap">
+		SELECT
+		<include refid="Base_Column_List" />
+		from book
+		WHERE
+		money_flag = #{moneyflag}
+	</select>
+	<select id="selectByBookBelongingNotIn"
+		parameterType="com.web.entity.book" resultMap="BaseResultMap">
+		SELECT
+		<include refid="Base_Column_List" />
+		from book
+		WHERE
+		book_belonging not in(0,1)
+	</select>
+</mapper>

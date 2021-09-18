@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.web.dao.bookwordDao">
+	<resultMap id="BaseResultMap" type="com.web.entity.bookword">
+		<result column="book_word_id" property="bookwordid"
+			jdbcType="BIGINT" />
+		<result column="word_id" property="wordid" jdbcType="INTEGER" />
+		<result column="record" property="record" jdbcType="BIGINT" />
+		<result column="word_url" property="wordurl" jdbcType="VARCHAR" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		book_word_id,word_id,record,word_url
+	</sql>
+	<select id="getByBookRecord" resultMap="BaseResultMap">
+		SELECT
+		<include refid="Base_Column_List" />
+		from book_word
+		WHERE
+		record = #{record}
+	</select>
+
+	<insert id="savebookword"
+		parameterType="com.web.entity.bookword">
+		INSERT INTO book_word ( word_id,record,word_url)
+		values(#{wordid},#{record},#{wordurl})
+	</insert>
+
+</mapper>

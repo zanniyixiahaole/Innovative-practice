@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.web.dao.countDao">
+	<resultMap id="contentResultMap" type="com.web.entity.count">
+		<result column="id" property="word_id" />
+		<result column="total" property="total" />
+		<result column="zi" property="word" />
+	</resultMap>
+	<!-- 查询每个字出现的频率 -->
+	<select id="selectTotalOfWord" resultMap="contentResultMap">
+		select pw.word_id ,count(*) as total,w.word from photo_word pw left join
+		word w on pw.word_id=w.word_id GROUP BY pw.word_id ORDER BY total DESC
+	</select>
+</mapper> 

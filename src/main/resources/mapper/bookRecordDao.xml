@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.web.dao.bookrecordDao">
+	<!-- 目的：为dao接口方法提供sql语句配置 -->
+	<resultMap id="BaseResultMap"
+		type="com.web.entity.bookRecord">
+		<result column="book_record" property="bookrecord"
+			jdbcType="BIGINT" />
+		<result column="book_id" property="bookid" jdbcType="BIGINT" />
+		<result column="rec_page" property="recpage" jdbcType="INTEGER" />
+		<result column="rec_flag" property="recflag" jdbcType="INTEGER" />
+		<result column="rec_book_date_time" property="recbookdatetime"
+			jdbcType="DATE" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		book_record, book_id, rec_page, rec_flag,rec_book_date_time
+	</sql>
+	<!-- 注册用 -->
+	<select id="bookRecordSelect"
+		parameterType="com.web.entity.bookRecord" resultMap="BaseResultMap">
+		SELECT
+		<include refid="Base_Column_List" />
+		from book_record
+		WHERE
+		book_id = #{bookid}
+	</select>
+
+	<insert id="saveBookRecord"
+		parameterType="com.web.entity.bookRecord">
+		INSERT INTO book_record (book_id ,
+		rec_page,rec_flag,rec_book_date_time)
+		values(#{bookid},#{recpage},#{recflag},#{recbookdatetime})
+	</insert>
+	<update id="UpdataBookRecord"
+		parameterType="com.web.entity.bookRecord">
+		update book_record
+		set rec_flag= #{recflag},
+		rec_book_date_time=#{recbookdatetime}
+
+		where book_record = #{bookrecord}
+
+	</update>
+
+	<select id="bookRecordbyidandpage"
+		parameterType="com.web.entity.bookRecord" resultMap="BaseResultMap">
+		SELECT
+		*
+		from book_record
+		WHERE
+		book_id = #{bookid} and
+		rec_page=#{recflage}
+		<!-- book_id = #{bookid} and rec_page=#{recflage} -->
+	</select>
+
+	<!--根据bookId(书籍Id)和rec_page(页码数)查询是否已经被识别 刘帅威 -->
+	<select id="searchRecognizedBybookIdAndRecPage"
+		resultType="java.lang.Integer">
+		SELECT rec_flag
+		FROM book_record
+		WHERE book_id=#{bookId} and
+		rec_page=${recPage}
+	</select>
+	<!--根据bookId查询已识别的页数 刘帅威 -->
+	<select id="getRecognizedPageNumByBookId"
+		resultType="java.lang.Integer">
+		SELECT count(*)
+		FROM book_record
+		WHERE book_id=#{bookId} and
+		rec_flag=1
+	</select>
+
+</mapper>

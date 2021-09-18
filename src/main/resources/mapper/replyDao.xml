@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.web.dao.replyDao">
+	<!-- 目的：为dao接口方法提供sql语句配置 -->
+
+	<!-- 注册用 -->
+	<select id="getReplys" parameterType="java.lang.Long"
+		resultType="Reply">
+		select * from reply where userId = #{userId} and resourceId
+		> 0
+	</select>
+
+	<update id="deleteReply" parameterType="java.lang.Long">
+		delete from reply where
+		replyId = #{replyId}
+	</update>
+
+	<select id="getReplysbyRid" parameterType="java.lang.Long"
+		resultType="Reply">
+		select * from reply where resourceId = #{resourceId}
+	</select>
+
+	<insert id="addReply" parameterType="Reply">
+		insert into
+		reply(userId,resourceId,replyContent)
+		values(#{userId},#{resourceId},#{replyContent})
+	</insert>
+
+	<select id="getFeedbacks" parameterType="java.lang.Long"
+		resultType="Reply">
+		select * from reply where userId = #{userId} and
+		resourceId=0
+	</select>
+
+</mapper>

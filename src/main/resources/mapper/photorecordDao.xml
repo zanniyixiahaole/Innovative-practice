@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.web.dao.photorecordDao">
+	<resultMap id="BaseResultMap"
+		type="com.web.entity.PhotoRecord">
+		<result column="record" property="record" jdbcType="BIGINT" />
+		<result column="userID" property="userId" jdbcType="BIGINT" />
+		<result column="date_time" property="dateTime" jdbcType="DATE" />
+		<result column="record_url" property="recordUrl"
+			jdbcType="VARCHAR" />
+		<result column="recognized" property="recognized"
+			jdbcType="INTEGER" />
+	</resultMap>
+	<!-- 目的：为dao接口方法提供sql语句配置 -->
+
+	<!-- 注册用 -->
+	<insert id="savePhotoRecord"
+		parameterType="com.web.entity.PhotoRecord">
+		INSERT INTO photo_record (userId ,
+		date_time,record_url,recognized)
+		values(#{userId},#{dateTime},#{recordUrl},#{recognized})
+	</insert>
+	<update id="updateRecognized"
+		parameterType="com.web.entity.PhotoRecord">
+		update photo_record
+		<set>
+			<if test="recognized!=null">recognized=#{recognized}</if>
+		</set>
+		where record=#{record}
+	</update>
+	<select id="getPhotoRecordID" resultType="PhotoRecord">
+		SELECT
+		record
+		FROM
+		photo_record
+		WHERE
+		record_url = #{jpgname}
+	</select>
+	<select id="selectRecognized" resultType="Integer">
+		SELECT
+		recognized
+		FROM
+		photo_record
+		WHERE
+		record_url = #{jpgname}
+	</select>
+	<select id="getAllPhotoRecord" resultType="PhotoRecord">
+		SELECT
+		*
+		FROM
+		photo_record
+		ORDER BY
+		record
+		desc
+	</select>
+
+	<select id="getPersonalPhotoUrls" resultType="String">
+		SELECT
+		record_url
+		FROM
+		photo_record
+		WHERE
+		userID = #{userId}
+		ORDER BY
+		record
+		desc
+	</select>
+	<select id="getPhotoRecordByRecord" resultType="PhotoRecord">
+		SELECT
+		*
+		FROM
+		photo_record
+		WHERE
+		record = #{record}
+	</select>
+
+	<select id="getPhotoRecordByUserId" resultType="PhotoRecord">
+		SELECT
+		*
+		FROM
+		photo_record
+		WHERE
+		userID = #{userId}
+		ORDER BY
+		record
+		desc
+	</select>
+
+</mapper>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.web.dao.photowordDao">
+	<!-- 目的：为dao接口方法提供sql语句配置 -->
+
+	<!-- 注册用 -->
+	<insert id="savePhotoWord"
+		parameterType="com.web.entity.PhotoWord">
+		INSERT INTO photo_word (word_id,photo_record,word_url)
+		values(#{wordId},#{photoRecord},#{wordUrl})
+	</insert>
+	<select id="selectByWordId" resultType="PhotoWord">
+		SELECT
+		*
+		FROM
+		photo_word
+		WHERE
+		word_id=#{wordId}
+	</select>
+	<select id="selectByUserIdAndWordId" resultType="PhotoWord">
+		SELECT
+		*
+		FROM
+		photo_word
+		WHERE
+		word_id=#{wordId}
+		AND photo_record in (
+		SELECT
+		record
+		FROM photo_record
+		WHERE userID=#{userId}
+		)
+	</select>
+	<select id="selectByRecord" resultType="PhotoWord">
+		SELECT
+		*
+		FROM
+		photo_word
+		WHERE
+		photo_record=#{record}
+	</select>
+
+</mapper>
