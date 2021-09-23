@@ -8,6 +8,9 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.util.UUID;
+
+import cn.dsna.util.images.ValidateCode;
+import com.fasterxml.jackson.databind.DatabindContext;
 import com.web.tool.StringFix;
 import javax.imageio.ImageIO;
 import com.lowagie.text.pdf.codec.Base64.InputStream;
@@ -79,7 +82,8 @@ public class mainController {
 	private photowordService photowordService;
 	@Autowired
 	private wordService wordService;
-	
+	private Object HttpSession;
+
 	@RequestMapping("/shibeipingtai")
 	public String shibeipingtai() {
 		return "shibeipingtai";
@@ -232,11 +236,15 @@ public class mainController {
 	}
 	//登录验证
 	@RequestMapping(value = "/loginCheck", method = RequestMethod.POST)
-	private String tologin(@Param("phonenumber") String phonenumber, @Param("password") String password, Map<String, Object> map,
+	private String tologin(@Param("phonenumber") String phonenumber, @Param("password") String password,
+						   @Param("verifyCode") String verifyCode, Map<String, Object> map,
 			HttpServletRequest request, HttpServletResponse response) {
-		Users user = userService.getByPhonenumberAndPassword(phonenumber, password);
-		HttpSession session = request.getSession();
-	//	System.out.println("当前的sessionId是:"+session.getId());
+
+		String codeValue = (String) request.getSession().getAttribute("verifyCodeValue");
+		if(verifyCode.equalsIgnoreCase(verifyCode)){
+			Users user = userService.getByPhonenumberAndPassword(phonenumber,password);
+			HttpSession session = request.getSession();
+			//	System.out.println("当前的sessionId是:"+session.getId());
 		if (user != null) {
 			// ==========新增
 						// 保存登录时间
@@ -271,8 +279,9 @@ public class mainController {
 						//活跃度排名
 						List<Users> rank = userService.getRank();
 						for(int i=0;i<rank.size();i++) {
-							if(rank.get(i).getUserId().intValue()==user.getUserId().intValue())
+							if(rank.get(i).getUserId().intValue()==user.getUserId().intValue()) {
 								session.setAttribute("rank", i+1);//将排名放入session中
+							}
 							System.out.println(i);
 						}
 						// 新增========
@@ -288,8 +297,33 @@ public class mainController {
 			System.out.println("登录失败！");
 			return "tologin";
 		}
+		}
+		else {
+			request.setAttribute("msg","验证码错误，请重新登录！");
+			System.out.println("登录失败！");
+			return "tologin";
+			}
 	}
+		/**
+		 * 获取验证码
+		 */
 
+	@RequestMapping("/verifyCode")
+	public void verifyCode(HttpServletResponse response, HttpSession session)throws IOException{
+			//设置图像格式
+		response.setContentType("img/jpeg");
+			//禁止图片缓存
+			response.setHeader("Pragma","no-cache");
+			response.setHeader("Cache-Control","no-cache");
+			response.setHeader("Expires", String.valueOf(0));
+			//长宽高以及干扰线数量
+			ValidateCode verifyCode = new ValidateCode(180,40,5,50);
+			verifyCode.write(response.getOutputStream());
+
+			System.out.println("验证码为："+verifyCode.getCode());
+			//将验证码保存在session中
+		session.setAttribute("verifyCodeValue", verifyCode.getCode());
+		}
 	// 注册
 	// 转向注册页面
 	@RequestMapping("/regist")
@@ -325,8 +359,9 @@ public class mainController {
             	file2.mkdir();//创建文件夹	
             	}
 			return "tologin";// 注册成功跳转到登录页面
-		} else
+		} else {
 			return "toregist";// 注册失败留在原页面
+		}
 	}
 	//退出登录
 	@RequestMapping("/logout")
@@ -474,10 +509,11 @@ public class mainController {
 
 	
 		boolean a=base64ToImg.base64ToImg(imgStr.split(",")[1],"/FTZ/"+url.split("/.")[0]+"_rec."+url.split("/.")[1]);
-		if(a)
+		if(a) {
 			return "suceess";
-		else
+		} else {
 			return "fail";
+		}
 
     }  
 	

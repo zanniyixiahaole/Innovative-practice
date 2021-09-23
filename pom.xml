@@ -301,5 +301,10 @@
 			<artifactId>jcommon</artifactId>
 			<version>1.0.16</version>
 		</dependency>
+		<!--  验证码 -->
+		<dependency>
+			<groupId>cn.dsna.util.images</groupId>
+			<artifactId>ValidateCode</artifactId>
+		</dependency>
 	</dependencies>
 </project>

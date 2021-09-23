@@ -85,7 +85,10 @@ body {
 
 						<div class="clear"></div>
 					</div>
-
+					<div>
+						验证码：<input type="text" id="verifyCode" name="verifyCode">
+						<img src="${pageContext.request.contextPath }/verifyCode" onclick="changeCode()" id="verifyCode-img"><a href="javascript:changeCode()">看不清,换一张</a>
+					</div>
 					<div class="main-two-w3ls">
 
 						<div class="right-side-forget">
