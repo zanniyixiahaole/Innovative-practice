@@ -51,6 +51,14 @@
 			alert(msg)
 		}
 	</script>
+	<!-- 	验证码功能 -->
+	<script type="text/javascript">
+		/* function reloadValidCode() {
+            $("#imgcode").prop('src',"${ctx}/util/VerifyCodeUtils/verifyCode?timed="+ new Date().getMilliseconds());
+} */
+		function changeCode() {
+			$("#verifyCode-img").attr("src","${pageContext.request.contextPath}/verifyCode?time="+new Date().getTime());
+		} </script>
 <style type="text/css">
 body {
 	background: url(Assets/images/login/adminlogo.jpg) top center no-repeat;
@@ -89,6 +97,7 @@ body {
 						验证码：<input type="text" id="verifyCode" name="verifyCode">
 						<img src="${pageContext.request.contextPath }/verifyCode" onclick="changeCode()" id="verifyCode-img"><a href="javascript:changeCode()">看不清,换一张</a>
 					</div>
+
 					<div class="main-two-w3ls">
 
 						<div class="right-side-forget">
